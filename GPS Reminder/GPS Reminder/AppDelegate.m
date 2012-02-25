@@ -1,6 +1,6 @@
 //
 //  AppDelegate.m
-//  GPS Reminder
+//  My Personal Helper
 //
 //  Created by Jerry on 25/02/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
@@ -8,15 +8,57 @@
 
 #import "AppDelegate.h"
 
+#import "RemindersViewController.h"
+
+#import "DetailViewController.h"
+#import "MyHelperViewController.h"
+
 @implementation AppDelegate
 
 @synthesize window = _window;
+@synthesize navigationController = _navigationController;
+@synthesize splitViewController = _splitViewController;
+@synthesize tabBarController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+	
+	self.tabBarController = [[UITabBarController alloc] init];
+	
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+	    RemindersViewController *masterViewController = [[RemindersViewController alloc] initWithNibName:@"RemindersViewController_iPhone" bundle:nil];
+	    self.navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
+	    self.navigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Reminders" image:nil tag:0];
+		
+		MyHelperViewController *myHelperController = [[MyHelperViewController alloc] initWithNibName:@"MyHelperViewController_iPhone" bundle:nil];
+		myHelperController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"My Helper" image:nil tag:1];
+		
+		NSArray *arrayControllers = [NSArray arrayWithObjects:self.navigationController, myHelperController, nil];
+		
+		self.tabBarController.viewControllers = arrayControllers;
+	} else {
+	    RemindersViewController *masterViewController = [[RemindersViewController alloc] initWithNibName:@"RemindersViewController_iPad" bundle:nil];
+	    UINavigationController *masterNavigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
+	    
+	    DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController_iPad" bundle:nil];
+	    UINavigationController *detailNavigationController = [[UINavigationController alloc] initWithRootViewController:detailViewController];
+		
+		masterViewController.detailViewController = detailViewController;
+		
+	    self.splitViewController = [[UISplitViewController alloc] init];
+	    self.splitViewController.delegate = detailViewController;
+	    self.splitViewController.viewControllers = [NSArray arrayWithObjects:masterNavigationController, detailNavigationController, nil];
+	    
+		self.splitViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Reminders" image:nil tag:0];
+		
+		MyHelperViewController *myHelperController = [[MyHelperViewController alloc] initWithNibName:@"MyHelperViewController_iPad" bundle:nil];
+		myHelperController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"My Helper" image:nil tag:1];
+	    NSArray *arrayControllers = [NSArray arrayWithObjects:self.splitViewController, myHelperController, nil];
+		self.tabBarController.viewControllers = arrayControllers;
+	}
+	self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;
 }

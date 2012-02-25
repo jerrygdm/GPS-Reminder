@@ -12,7 +12,16 @@
 		C48DE55614F965D500779064 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48DE55514F965D500779064 /* CoreGraphics.framework */; };
 		C48DE55C14F965D500779064 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C48DE55A14F965D500779064 /* InfoPlist.strings */; };
 		C48DE55E14F965D500779064 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C48DE55D14F965D500779064 /* main.m */; };
-		C48DE56214F965D500779064 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C48DE56114F965D500779064 /* AppDelegate.m */; };
+		C48DE57414F9715300779064 /* RemindersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C48DE56D14F9715300779064 /* RemindersViewController.m */; };
+		C48DE57514F9715300779064 /* RemindersViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C48DE56E14F9715300779064 /* RemindersViewController_iPhone.xib */; };
+		C48DE57614F9715300779064 /* RemindersViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C48DE56F14F9715300779064 /* RemindersViewController_iPad.xib */; };
+		C48DE57714F9715300779064 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C48DE57114F9715300779064 /* DetailViewController.m */; };
+		C48DE57814F9715300779064 /* DetailViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C48DE57214F9715300779064 /* DetailViewController_iPhone.xib */; };
+		C48DE57914F9715300779064 /* DetailViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C48DE57314F9715300779064 /* DetailViewController_iPad.xib */; };
+		C48DE58014F9716F00779064 /* MyHelperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C48DE57B14F9716F00779064 /* MyHelperViewController.m */; };
+		C48DE58114F9716F00779064 /* MyHelperViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C48DE57C14F9716F00779064 /* MyHelperViewController_iPhone.xib */; };
+		C48DE58214F9716F00779064 /* MyHelperViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C48DE57D14F9716F00779064 /* MyHelperViewController_iPad.xib */; };
+		C48DE58314F9716F00779064 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C48DE57F14F9716F00779064 /* AppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +33,20 @@
 		C48DE55B14F965D500779064 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C48DE55D14F965D500779064 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C48DE55F14F965D500779064 /* GPS Reminder-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GPS Reminder-Prefix.pch"; sourceTree = "<group>"; };
-		C48DE56014F965D500779064 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		C48DE56114F965D500779064 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C48DE56C14F9715300779064 /* RemindersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindersViewController.h; sourceTree = "<group>"; };
+		C48DE56D14F9715300779064 /* RemindersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindersViewController.m; sourceTree = "<group>"; };
+		C48DE56E14F9715300779064 /* RemindersViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RemindersViewController_iPhone.xib; sourceTree = "<group>"; };
+		C48DE56F14F9715300779064 /* RemindersViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RemindersViewController_iPad.xib; sourceTree = "<group>"; };
+		C48DE57014F9715300779064 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		C48DE57114F9715300779064 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		C48DE57214F9715300779064 /* DetailViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController_iPhone.xib; sourceTree = "<group>"; };
+		C48DE57314F9715300779064 /* DetailViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController_iPad.xib; sourceTree = "<group>"; };
+		C48DE57A14F9716F00779064 /* MyHelperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyHelperViewController.h; sourceTree = "<group>"; };
+		C48DE57B14F9716F00779064 /* MyHelperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyHelperViewController.m; sourceTree = "<group>"; };
+		C48DE57C14F9716F00779064 /* MyHelperViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyHelperViewController_iPhone.xib; sourceTree = "<group>"; };
+		C48DE57D14F9716F00779064 /* MyHelperViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyHelperViewController_iPad.xib; sourceTree = "<group>"; };
+		C48DE57E14F9716F00779064 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C48DE57F14F9716F00779064 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,8 +93,11 @@
 		C48DE55714F965D500779064 /* GPS Reminder */ = {
 			isa = PBXGroup;
 			children = (
-				C48DE56014F965D500779064 /* AppDelegate.h */,
-				C48DE56114F965D500779064 /* AppDelegate.m */,
+				C48DE57E14F9716F00779064 /* AppDelegate.h */,
+				C48DE57F14F9716F00779064 /* AppDelegate.m */,
+				C48DE58414F9717300779064 /* Reminders */,
+				C48DE58614F9718900779064 /* Where */,
+				C48DE58514F9718200779064 /* Settings */,
 				C48DE55814F965D500779064 /* Supporting Files */,
 			);
 			path = "GPS Reminder";
@@ -88,6 +112,39 @@
 				C48DE55F14F965D500779064 /* GPS Reminder-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C48DE58414F9717300779064 /* Reminders */ = {
+			isa = PBXGroup;
+			children = (
+				C48DE56C14F9715300779064 /* RemindersViewController.h */,
+				C48DE56D14F9715300779064 /* RemindersViewController.m */,
+				C48DE56E14F9715300779064 /* RemindersViewController_iPhone.xib */,
+				C48DE56F14F9715300779064 /* RemindersViewController_iPad.xib */,
+				C48DE57014F9715300779064 /* DetailViewController.h */,
+				C48DE57114F9715300779064 /* DetailViewController.m */,
+				C48DE57214F9715300779064 /* DetailViewController_iPhone.xib */,
+				C48DE57314F9715300779064 /* DetailViewController_iPad.xib */,
+			);
+			name = Reminders;
+			sourceTree = "<group>";
+		};
+		C48DE58514F9718200779064 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		C48DE58614F9718900779064 /* Where */ = {
+			isa = PBXGroup;
+			children = (
+				C48DE57A14F9716F00779064 /* MyHelperViewController.h */,
+				C48DE57B14F9716F00779064 /* MyHelperViewController.m */,
+				C48DE57C14F9716F00779064 /* MyHelperViewController_iPhone.xib */,
+				C48DE57D14F9716F00779064 /* MyHelperViewController_iPad.xib */,
+			);
+			name = Where;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +198,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C48DE55C14F965D500779064 /* InfoPlist.strings in Resources */,
+				C48DE57514F9715300779064 /* RemindersViewController_iPhone.xib in Resources */,
+				C48DE57614F9715300779064 /* RemindersViewController_iPad.xib in Resources */,
+				C48DE57814F9715300779064 /* DetailViewController_iPhone.xib in Resources */,
+				C48DE57914F9715300779064 /* DetailViewController_iPad.xib in Resources */,
+				C48DE58114F9716F00779064 /* MyHelperViewController_iPhone.xib in Resources */,
+				C48DE58214F9716F00779064 /* MyHelperViewController_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,7 +215,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C48DE55E14F965D500779064 /* main.m in Sources */,
-				C48DE56214F965D500779064 /* AppDelegate.m in Sources */,
+				C48DE57414F9715300779064 /* RemindersViewController.m in Sources */,
+				C48DE57714F9715300779064 /* DetailViewController.m in Sources */,
+				C48DE58014F9716F00779064 /* MyHelperViewController.m in Sources */,
+				C48DE58314F9716F00779064 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
