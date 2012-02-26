@@ -9,9 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @class DetailViewController;
+@class InsertReminderViewController;
 
-@interface RemindersViewController : UIViewController
+@interface RemindersViewController : UIViewController <NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 @property (strong, nonatomic) IBOutlet UITableView *remindersTableView;
+@property (strong, nonatomic) InsertReminderViewController *insertReminderController;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
+
 @end

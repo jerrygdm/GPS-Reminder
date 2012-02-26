@@ -22,6 +22,13 @@
 		C48DE58114F9716F00779064 /* MyHelperViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C48DE57C14F9716F00779064 /* MyHelperViewController_iPhone.xib */; };
 		C48DE58214F9716F00779064 /* MyHelperViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C48DE57D14F9716F00779064 /* MyHelperViewController_iPad.xib */; };
 		C48DE58314F9716F00779064 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C48DE57F14F9716F00779064 /* AppDelegate.m */; };
+		C48DE58814F975AA00779064 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48DE58714F975AA00779064 /* CoreData.framework */; };
+		C48DE58B14F9761100779064 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C48DE58914F9761100779064 /* Model.xcdatamodeld */; };
+		C48DE59314F98E7300779064 /* InsertReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C48DE59114F98E7300779064 /* InsertReminderViewController.m */; };
+		C48DE59414F98E7300779064 /* InsertReminderViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C48DE59214F98E7300779064 /* InsertReminderViewController_iPhone.xib */; };
+		C498C99B14F9976E006A060A /* InsertReminderViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C498C99A14F9976E006A060A /* InsertReminderViewController_iPad.xib */; };
+		C498C99F14F997FA006A060A /* ActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C498C99D14F997FA006A060A /* ActionViewController.m */; };
+		C498C9A014F997FA006A060A /* ActionViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C498C99E14F997FA006A060A /* ActionViewController_iPhone.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +54,15 @@
 		C48DE57D14F9716F00779064 /* MyHelperViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyHelperViewController_iPad.xib; sourceTree = "<group>"; };
 		C48DE57E14F9716F00779064 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C48DE57F14F9716F00779064 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C48DE58714F975AA00779064 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C48DE58A14F9761100779064 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		C48DE59014F98E7300779064 /* InsertReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsertReminderViewController.h; sourceTree = "<group>"; };
+		C48DE59114F98E7300779064 /* InsertReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsertReminderViewController.m; sourceTree = "<group>"; };
+		C48DE59214F98E7300779064 /* InsertReminderViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsertReminderViewController_iPhone.xib; sourceTree = "<group>"; };
+		C498C99A14F9976E006A060A /* InsertReminderViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsertReminderViewController_iPad.xib; sourceTree = "<group>"; };
+		C498C99C14F997FA006A060A /* ActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionViewController.h; sourceTree = "<group>"; };
+		C498C99D14F997FA006A060A /* ActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionViewController.m; sourceTree = "<group>"; };
+		C498C99E14F997FA006A060A /* ActionViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActionViewController_iPhone.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C48DE58814F975AA00779064 /* CoreData.framework in Frameworks */,
 				C48DE55214F965D500779064 /* UIKit.framework in Frameworks */,
 				C48DE55414F965D500779064 /* Foundation.framework in Frameworks */,
 				C48DE55614F965D500779064 /* CoreGraphics.framework in Frameworks */,
@@ -83,6 +100,7 @@
 		C48DE55014F965D500779064 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C48DE58714F975AA00779064 /* CoreData.framework */,
 				C48DE55114F965D500779064 /* UIKit.framework */,
 				C48DE55314F965D500779064 /* Foundation.framework */,
 				C48DE55514F965D500779064 /* CoreGraphics.framework */,
@@ -99,6 +117,7 @@
 				C48DE58614F9718900779064 /* Where */,
 				C48DE58514F9718200779064 /* Settings */,
 				C48DE55814F965D500779064 /* Supporting Files */,
+				C48DE58914F9761100779064 /* Model.xcdatamodeld */,
 			);
 			path = "GPS Reminder";
 			sourceTree = "<group>";
@@ -117,6 +136,7 @@
 		C48DE58414F9717300779064 /* Reminders */ = {
 			isa = PBXGroup;
 			children = (
+				C498C99814F9974D006A060A /* Insert New Reminder */,
 				C48DE56C14F9715300779064 /* RemindersViewController.h */,
 				C48DE56D14F9715300779064 /* RemindersViewController.m */,
 				C48DE56E14F9715300779064 /* RemindersViewController_iPhone.xib */,
@@ -145,6 +165,20 @@
 				C48DE57D14F9716F00779064 /* MyHelperViewController_iPad.xib */,
 			);
 			name = Where;
+			sourceTree = "<group>";
+		};
+		C498C99814F9974D006A060A /* Insert New Reminder */ = {
+			isa = PBXGroup;
+			children = (
+				C48DE59014F98E7300779064 /* InsertReminderViewController.h */,
+				C48DE59114F98E7300779064 /* InsertReminderViewController.m */,
+				C48DE59214F98E7300779064 /* InsertReminderViewController_iPhone.xib */,
+				C498C99A14F9976E006A060A /* InsertReminderViewController_iPad.xib */,
+				C498C99C14F997FA006A060A /* ActionViewController.h */,
+				C498C99D14F997FA006A060A /* ActionViewController.m */,
+				C498C99E14F997FA006A060A /* ActionViewController_iPhone.xib */,
+			);
+			name = "Insert New Reminder";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +238,9 @@
 				C48DE57914F9715300779064 /* DetailViewController_iPad.xib in Resources */,
 				C48DE58114F9716F00779064 /* MyHelperViewController_iPhone.xib in Resources */,
 				C48DE58214F9716F00779064 /* MyHelperViewController_iPad.xib in Resources */,
+				C48DE59414F98E7300779064 /* InsertReminderViewController_iPhone.xib in Resources */,
+				C498C99B14F9976E006A060A /* InsertReminderViewController_iPad.xib in Resources */,
+				C498C9A014F997FA006A060A /* ActionViewController_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +256,9 @@
 				C48DE57714F9715300779064 /* DetailViewController.m in Sources */,
 				C48DE58014F9716F00779064 /* MyHelperViewController.m in Sources */,
 				C48DE58314F9716F00779064 /* AppDelegate.m in Sources */,
+				C48DE58B14F9761100779064 /* Model.xcdatamodeld in Sources */,
+				C48DE59314F98E7300779064 /* InsertReminderViewController.m in Sources */,
+				C498C99F14F997FA006A060A /* ActionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,8 +364,22 @@
 				C48DE56714F965D500779064 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C48DE58914F9761100779064 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C48DE58A14F9761100779064 /* Model.xcdatamodel */,
+			);
+			currentVersion = C48DE58A14F9761100779064 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C48DE54414F965D400779064 /* Project object */;
 }

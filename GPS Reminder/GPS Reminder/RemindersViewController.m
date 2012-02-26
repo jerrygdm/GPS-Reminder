@@ -9,17 +9,20 @@
 #import "RemindersViewController.h"
 
 #import "DetailViewController.h"
+#import "InsertReminderViewController.h"
 
-@interface RemindersViewController () 
+@interface RemindersViewController () <InsertReminderViewControllerDelegate>
 @property (strong, nonatomic) NSMutableArray *_objects;
 
 @end
 
 @implementation RemindersViewController
-
 @synthesize detailViewController = _detailViewController;
 @synthesize remindersTableView;
 @synthesize _objects;
+@synthesize insertReminderController;
+@synthesize managedObjectContext;
+@synthesize fetchedResultsController = __fetchedResultsController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -48,6 +51,8 @@
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
+	self.managedObjectContext = nil;
+	self.fetchedResultsController = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -61,12 +66,46 @@
 
 - (void)insertNewObject:(id)sender
 {
-    if (!_objects) {
+/*    if (!_objects) {
         _objects = [[NSMutableArray alloc] init];
     }
     [_objects insertObject:[NSDate date] atIndex:0];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.remindersTableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+*/
+	NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
+    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
+    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+    
+    // If appropriate, configure the new managed object.
+    // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
+    [newManagedObject setValue:@"prova_reminder" forKey:@"name"];
+    
+    // Save the context.
+    NSError *error = nil;
+    if (![context save:&error]) {
+		// Replace this implementation with code to handle the error appropriately.
+		// abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+
+	
+	
+	insertReminderController = [[InsertReminderViewController alloc] initWithNibName:@"InsertReminderViewController_iPhone" bundle:nil];
+	self.insertReminderController.delegate = self;
+	self.insertReminderController.managedObjectContext = self.managedObjectContext;
+	
+	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:insertReminderController];
+	
+	[self.navigationController presentModalViewController:navController animated:YES];
+	
+}
+
+#pragma mark - InsertReminderViewController Delegate
+-(void)dismissController:(InsertReminderViewController *)insertController
+{
+	[insertController dismissModalViewControllerAnimated:YES];
 }
 
 #pragma mark - Table View
@@ -145,5 +184,44 @@
         self.detailViewController.detailItem = object;
     }
 }
+
+#pragma mark - Fetched results controller
+
+- (NSFetchedResultsController *)fetchedResultsController
+{
+    if (__fetchedResultsController != nil) {
+        return __fetchedResultsController;
+    }
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    // Edit the entity name as appropriate.
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Reminder" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    // Set the batch size to a suitable number.
+    [fetchRequest setFetchBatchSize:20];
+    
+    // Edit the sort key as appropriate.
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:NO];
+    NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
+    
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
+    // Edit the section name key path and cache name if appropriate.
+    // nil for section name key path means "no sections".
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
+    aFetchedResultsController.delegate = self;
+    self.fetchedResultsController = aFetchedResultsController;
+    
+	NSError *error = nil;
+	if (![self.fetchedResultsController performFetch:&error]) {
+		// Replace this implementation with code to handle the error appropriately.
+		// abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
+	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+	    abort();
+	}
+    
+    return __fetchedResultsController;
+}    
 
 @end
