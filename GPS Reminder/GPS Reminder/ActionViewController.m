@@ -81,6 +81,13 @@
 	[self.actionTableView reloadData];
 }
 
+-(void)viewDidDisappear:(BOOL)animated
+{
+	if (self.actionTextField.text) {
+		self.actionTextField.text = @"";
+	}
+}
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];
